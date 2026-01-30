@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import img1 from "/src/assets/1.jpg";
 import img2 from "/src/assets/2.jpg";
 import img3 from "/src/assets/3.jpg";
@@ -12,11 +12,11 @@ const images = [img1, img2, img3, img4, img5];
 
 function MainPage() {
   const [visible, setVisible] = useState(true);
-  const [celebrationType, setCelebrationType] = useState(null);
+  const [celebrationType, setCelebrationType] = useState<"yes" | "no" | null>(null);  
   const [current, setCurrent] = useState(0);
   const [fade, setFade] = useState(true);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setCelebrationType("yes");
     setVisible(false);

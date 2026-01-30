@@ -1,7 +1,8 @@
 import { useState } from "react";
-import React from "react";
-
-function RunawayButton({ onClick }) {
+interface RunawayButtonProps {
+  onClick?: () => void; 
+}
+function RunawayButton({ onClick }:RunawayButtonProps) {
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
   const moveButton = () => {
